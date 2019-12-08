@@ -5,8 +5,6 @@ import { Layout, Row, Col, Avatar, Input, Menu, Dropdown, Icon, Badge } from 'an
 import 'antd/dist/antd.css';  // or 'antd/dist/antd.less'
 
 import SiderComponent from './sider'
-import Tooltip from '../component/tooltip'
-import MyNews from '../component/myNews'
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -19,12 +17,6 @@ const menu = (
         <Menu.Item>
             <a target="_blank" rel="noopener noreferrer" href="#">注销</a>
         </Menu.Item>
-        {/*<Menu.Item>*/}
-        {/*    <MyNews />*/}
-        {/*</Menu.Item>*/}
-        {/*<Menu.Item>*/}
-        {/*    <Tooltip />*/}
-        {/*</Menu.Item>*/}
     </Menu>
 );
 
