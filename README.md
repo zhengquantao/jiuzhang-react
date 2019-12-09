@@ -3,14 +3,13 @@
 
 #####  <span style="font-siez='20px'"> 九章 demo</span>  <br/>
 
-<img src="https://github.com/zhengquantao/jiuzhang-react/tree/master/src/img/home.png" width=100%>
+<img src="https://github.com/zhengquantao/jiuzhang-react/blob/master/src/img/home.png" width=100%>
 
+<img src="https://github.com/zhengquantao/jiuzhang-react/blob/master/src/img/today.png" width=100%>
 
-<img src="https://github.com/zhengquantao/jiuzhang-react/tree/master/src/img/today.png" width=100%>
+<img src="https://github.com/zhengquantao/jiuzhang-react/blob/master/src/img/login.png" width=100%>
 
-<img src="https://github.com/zhengquantao/jiuzhang-react/tree/master/src/img/login.png" width=100%>
-
-<img src="https://github.com/zhengquantao/jiuzhang-react/tree/master/src/img/register.png" width=100%>
+<img src="https://github.com/zhengquantao/jiuzhang-react/blob/master/src/img/register.png" width=100%>
 
 
 # 接口
