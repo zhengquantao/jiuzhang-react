@@ -95,20 +95,6 @@ class EchartsTests extends Component {
         super(props);
         this.state = {
             dataSource: [
-            {
-              key: '0',
-              desc: 'Edward King 0',
-              datetime: '32',
-              index: 'London, Park Lane no. 0',
-                status:1,
-            },
-            {
-              key: '1',
-              desc: 'Edward King 1',
-              datetime: '32',
-              index: 'London, Park Lane no. 1',
-                 status:1,
-            },
           ],
         };
          this.columns = [
@@ -223,7 +209,7 @@ class EchartsTests extends Component {
                 <Row style={{marginTop:50}}>
                     <Col span={3} offset={2}><strong style={{fontSize:"20px"}}>优先级一</strong>&nbsp;&nbsp;</Col>
 
-                    <Col span={12} offset={1} style={{marginTop:100}}>
+                    <Col span={15}style={{marginTop:100}}>
                         <Table
                           components={components}
                           rowClassName={() => 'editable-row'}

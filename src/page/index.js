@@ -5,6 +5,7 @@ import { Layout, Row, Col, Avatar, Input, Menu, Dropdown, Icon, Badge } from 'an
 import 'antd/dist/antd.css';  // or 'antd/dist/antd.less'
 
 import SiderComponent from './sider'
+import {Link} from "react-router";
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -15,7 +16,7 @@ const menu = (
             <a target="_blank" rel="noopener noreferrer" href="#">我的博客</a>
         </Menu.Item>
         <Menu.Item>
-            <a target="_blank" rel="noopener noreferrer" href="#">注销</a>
+            <Link to="/logout">注销</Link>
         </Menu.Item>
     </Menu>
 );

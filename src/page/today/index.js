@@ -95,20 +95,6 @@ class EchartsTests extends Component {
         super(props);
         this.state = {
             dataSource: [
-            {
-              key: '0',
-              desc: 'Edward King 0',
-              datetime: '32',
-                status:1,
-              index: '2',
-            },
-            {
-              key: '1',
-              desc: 'Edward King 1',
-              datetime: '32',
-                status:0,
-              index: '1',
-            },
           ],
         };
          this.columns = [
@@ -156,7 +142,9 @@ class EchartsTests extends Component {
           response =>{
               if (response.data.code === 1000){
                   const todoList = this.state.dataSource;
-                  todoList.push(response.data.data);
+                  for (const index in response.data.data){
+                      todoList.push(response.data.data[index]);
+                  }
                   this.setState({dataSource:todoList})
               }
           }

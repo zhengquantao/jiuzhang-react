@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import axios from "axios";
 
-import { Form, Input, Tooltip, Icon, Modal, Checkbox, Button} from 'antd';
+import { Form, Input, Tooltip, Icon, Modal, Checkbox, Button, Card, Row, Col} from 'antd';
 import {Link} from "react-router";
 const FormItem = Form.Item;
 
@@ -33,9 +33,9 @@ class RegistrationForm extends React.Component {
   sendCode = (e) => {
       e.preventDefault();
         this.props.form.validateFieldsAndScroll((err, values) => {
-          if (!err) {
-            console.log('Received values of form: ', values);
-            axios.post('http://127.0.0.1:8000/api/v1/send/', {'username': values.nickname, 'email': values.email}, 'http://127.0.0.1:8000/api/v1/login/',{Headers: {"Access-Control-Allow-Headers":"Content-Type"}}).then(response => {
+             console.log('Received values of form: ', values);
+          if (values.nickname && values.email) {
+            axios.post('http://127.0.0.1:8000/api/v1/send/', {'username': values.nickname, 'email': values.email},{Headers: {"Access-Control-Allow-Headers":"Content-Type"}}).then(response => {
                 const result = response.data;
                 if (result.code === 1000){
                     this.setState({
@@ -71,7 +71,10 @@ class RegistrationForm extends React.Component {
       form.validateFields(['confirm'], { force: true });
     }
     callback();
-  }
+  };
+    handleCancel = () => {
+    this.setState({ visible: false });
+  };
   render() {
     const { getFieldDecorator } = this.props.form;
     const { autoCompleteResult } = this.state;
@@ -100,12 +103,15 @@ class RegistrationForm extends React.Component {
     };
     const getBtn = getFieldDecorator('prefix', {
     })(
-      <button style={{ width: 100 }}  onClick={this.sendCode}>
+      <Button style={{ width: 100}}  type="primary" onClick={this.sendCode}>
         获取验证码
-      </button>
+      </Button>
     );
     return (
-        <div style={{paddingRight:'20%', marginTop:'150px'}}>
+        <Row >
+            <Col span={12} offset={6}>
+            <Card style={{paddingRight:'20%', marginTop:'50px', backgroundColor:'#eee'}}>
+            <center><h1>欢迎来到注册页面</h1></center>
             <Form onSubmit={this.handleSubmit}>
                 <FormItem
                 {...formItemLayout}
@@ -119,7 +125,7 @@ class RegistrationForm extends React.Component {
                 )}
                 >
                 {getFieldDecorator('nickname', {
-                    rules: [{ required: true, message: 'Please input your nickname!', whitespace: true }],
+                    rules: [{ required: true, message: '请输入用户名!', whitespace: true }],
                 })(
                     <Input />
                 )}
@@ -130,7 +136,7 @@ class RegistrationForm extends React.Component {
                 >
                 {getFieldDecorator('password', {
                     rules: [{
-                    required: true, message: 'Please input your password!',
+                    required: true, message: '请输入密码!',
                     }, {
                     validator: this.validateToNextPassword,
                     }],
@@ -144,7 +150,7 @@ class RegistrationForm extends React.Component {
                 >
                 {getFieldDecorator('confirm', {
                     rules: [{
-                    required: true, message: 'Please confirm your password!',
+                    required: true, message: '两次密码不一致',
                     }, {
                     validator: this.compareToFirstPassword,
                     }],
@@ -172,7 +178,7 @@ class RegistrationForm extends React.Component {
                 >
                     {getFieldDecorator('checkCode', {
                     rules: [{
-                    type: 'checkCode', message: '请输入验证码!',
+                    required: true, message: '请输入验证码!',
                     }, {
                     required: true, message: '请输入正确的验证码!',
                     }],
@@ -196,10 +202,13 @@ class RegistrationForm extends React.Component {
               <Modal
               title="重要提示"
               visible={this.state.visible}
+              onCancel={this.handleCancel}
             >
               <p>{this.state.data}</p>
             </Modal>
-        </div>
+        </Card>
+            </Col>
+        </Row>
     );
   }
 }
