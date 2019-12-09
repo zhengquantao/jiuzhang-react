@@ -5,7 +5,7 @@
 
 <img src="https://github.com/zhengquantao/jiuzhang-react/blob/master/src/img/home.png" width=100%>
 
-<img src="https://github.com/zhengquantao/jiuzhang-react/blob/master/src/img/today.png width=100%>
+<img src="https://github.com/zhengquantao/jiuzhang-react/blob/master/src/img/today.png" width=100%>
 
 <img src="https://github.com/zhengquantao/jiuzhang-react/blob/master/src/img/login.png" width=100%>
 
