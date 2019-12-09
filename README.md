@@ -3,13 +3,15 @@
 
 #####  <span style="font-siez='20px'"> 九章 demo</span>  <br/>
 
-![img](https://github.com/zhengquantao/jiuzhang-react/tree/master/src/img/home.png)
+<img src="https://github.com/zhengquantao/jiuzhang-react/tree/master/src/img/home.png" width=100%>
 
-![img](https://github.com/zhengquantao/jiuzhang-react/tree/master/src/img/today.png)
 
-![img](https://github.com/zhengquantao/jiuzhang-react/tree/master/src/img/login.png)
+<img src="https://github.com/zhengquantao/jiuzhang-react/tree/master/src/img/today.png" width=100%>
 
-![img](https://github.com/zhengquantao/jiuzhang-react/tree/master/src/img/register.png)
+<img src="https://github.com/zhengquantao/jiuzhang-react/tree/master/src/img/login.png" width=100%>
+
+<img src="https://github.com/zhengquantao/jiuzhang-react/tree/master/src/img/register.png" width=100%>
+
 
 # 接口
 ```text
