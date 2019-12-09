@@ -171,8 +171,8 @@ class EchartsTests extends Component {
           ...row,
         });
         this.setState({ dataSource: newData });
-        axios.post('http://127.0.0.1:8000/api/v1/update/', {"tid": index,
-                "desc":item.desc, "datetime": item.datetime, "index": item.index, "status": item.status,"username": localStorage.getItem("jwt_username"), "token": localStorage.getItem("jwt_token")}
+        axios.post('http://127.0.0.1:8000/api/v1/update/', {"tid": newData[index].index,
+                "desc":newData[index].desc, "datetime": newData[index].datetime, "index": newData[index].index, "status": newData[index].status,"username": localStorage.getItem("jwt_username"), "token": localStorage.getItem("jwt_token")}
       ,{Headers: {"Access-Control-Allow-Headers":"Content-Type"}}).then(
           response =>{
               console.log(response.data);

@@ -13,7 +13,7 @@ const { Header, Footer, Sider, Content } = Layout;
 const menu = (
     <Menu>
         <Menu.Item>
-            <a target="_blank" rel="noopener noreferrer" href="#">我的博客</a>
+            <a target="_blank" rel="noopener noreferrer" href="https://github.com/zhengquantao/jiuzhang-react/">我的博客</a>
         </Menu.Item>
         <Menu.Item>
             <Link to="/logout">注销</Link>

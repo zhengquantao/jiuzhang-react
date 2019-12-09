@@ -95,20 +95,7 @@ class EchartsTests extends Component {
         super(props);
         this.state = {
             dataSource: [
-            {
-              key: '0',
-              desc: 'Edward King 0',
-              datetime: '32',
-              index: 2,
-                status:0,
-            },
-            {
-              key: '1',
-              desc: 'Edward King 1',
-              datetime: '32',
-              index: 1,
-                status:1,
-            },
+
           ],
         };
          this.columns = [
@@ -156,7 +143,6 @@ class EchartsTests extends Component {
               console.log(response.data.data);
               if (response.data.code === 1000){
                   const todoList = this.state.dataSource;
-
                   for (const index in response.data.data){
                       todoList.push(response.data.data[index]);
                   }
@@ -187,15 +173,14 @@ class EchartsTests extends Component {
           ...row,
         });
         this.setState({ dataSource: newData });
-        axios.post('http://127.0.0.1:8000/api/v1/update/', {"tid": index,
-                "desc":item.desc, "datetime": item.datetime, "index": item.index, "status": item.status, "username": localStorage.getItem("jwt_username"), "token": localStorage.getItem("jwt_token")}
+        axios.post('http://127.0.0.1:8000/api/v1/update/', {"tid": newData[index].index,
+                "desc":newData[index].desc, "datetime": newData[index].datetime, "index": newData[index].index, "status": newData[index].status, "username": localStorage.getItem("jwt_username"), "token": localStorage.getItem("jwt_token")}
       ,{Headers: {"Access-Control-Allow-Headers":"Content-Type"}}).then(
           response =>{
               console.log(response.data);
           }
       )
       };
-    isEditing = record => record.key === this.state.editingKey;
     render() {
         const { dataSource } = this.state;
         const components = {
@@ -216,7 +201,6 @@ class EchartsTests extends Component {
               dataIndex: col.dataIndex,
               title: col.title,
               handleSave: this.handleSave,
-                editing: this.isEditing(record),
             }),
           };
         });
