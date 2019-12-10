@@ -9,7 +9,7 @@
 - [x] 列表界面支持翻页 
 - [x] 待办事项可以设置优先级 
 - [x] 待办事项可以设置 expire date 
-- [x] 支持按照不同的方式排序，如优先级，expire date
+- [ ] 支持按照不同的方式排序，如优先级，expire date
 - [x] API 带有测试用例 (因为我设置token验证, 所以需要token才能测试)
 
 #####  <span style="font-siez='20px'"> 九章 demo</span>  <br/>
